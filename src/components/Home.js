@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterWeather } from '../redux/home/home';
 import Location from './Location';
@@ -6,9 +6,7 @@ import Location from './Location';
 const Home = () => {
   const dispatch = useDispatch();
   const cityList = useSelector((state) => state.homeReducer);
-  const [code, setCode] = useState(100);
   const handleChange = (e) => {
-    setCode(e.currentTarget.value);
     dispatch(filterWeather(e.currentTarget.value));
   };
 
@@ -32,7 +30,6 @@ const Home = () => {
           const nameToPath = city.name.replace(/, | /g, '-');
           return (
             <li className="p-px w-1/2" key={city.name}>
-              {code}
               <Location nameToPath={nameToPath} city={city.name} />
             </li>
           );
