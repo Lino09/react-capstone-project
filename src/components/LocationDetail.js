@@ -22,34 +22,51 @@ const LocationDetail = ({ city }) => {
         today
       </h1>
       <div>
-        <ul className="px-4 space-y-2">
-          <li className="w-full flex justify-between h-16">
+        <ul className="px-1 space-y-1 bg-gray-200">
+          <li
+            className="w-full flex justify-between h-16 items-center bg-fuchsia-400 px-8 text-xl rounded
+            hover:bg-fuchsia-500"
+          >
             <span>{main}</span>
             <img src={`http://openweathermap.org/img/wn/${icon}.png`} alt="" />
           </li>
-          <li className="w-full flex justify-between h-16">
+          <li
+            className="w-full flex justify-between h-16 items-center bg-fuchsia-300 px-8 text-xl rounded
+            hover:bg-fuchsia-500"
+          >
             <span>Temp</span>
             <span>
               {temp}
               °C
             </span>
           </li>
-          <li className="w-full flex justify-between h-16">
+          <li
+            className="w-full flex justify-between h-16 items-center bg-fuchsia-400 px-8 text-xl rounded
+            hover:bg-fuchsia-500"
+          >
             <span>Humidity</span>
             <span>
               {humidity}
+              %
             </span>
           </li>
-          <li className="w-full flex justify-between h-16">
+          <li
+            className="w-full flex justify-between h-16 items-center bg-fuchsia-300 px-8 text-xl rounded
+            hover:bg-fuchsia-500"
+          >
             <span>Ultra Violet Radiation index</span>
             <span>
               {uvi}
             </span>
           </li>
-          <li className="w-full flex justify-between h-16">
+          <li
+            className="w-full flex justify-between h-16 items-center bg-fuchsia-400 px-8 text-xl rounded
+            hover:bg-fuchsia-500"
+          >
             <span>Wind Speed</span>
             <span>
               {windSpeed}
+              m/s
             </span>
           </li>
         </ul>
