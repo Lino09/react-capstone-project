@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterWeather } from '../redux/home/home';
 import Location from './Location';
+import logo from '../assets/images/logo.png';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -28,15 +29,38 @@ const Home = () => {
       alert('Your geolocation is not Available!');
     }
   };
+  const today = new Date();
+  const time = `${today.getHours()}:${today.getMinutes()}`;
 
   return (
-    <div className=" min-h-screen w-full flex flex-col items-center">
-      <div className="w-full max-w-lg px-4">
-        <h1 className=" text-3xl my-8">
+    <div className=" bg-pinkardo-header min-h-screen w-full flex flex-col items-center">
+      <div className="w-full max-w-lg">
+        <h1 className="text-2xl mt-2 mb-4 text-center font-sans font-light text-white relative">
+          <span className="text-base absolute left-4 top-2">{time}</span>
+          <img src="" alt="" />
           Cities weather
         </h1>
-        <div className="flex w-full justify-between">
-          <span> Filter by weather condition</span>
+        <div className="flex flex-col bg-pinkardo px-4 mb-4 py-4 text-white">
+          <span>
+            Local Weather:
+            {' '}
+            {localWeather}
+          </span>
+          <span>
+            Local Temperature:
+            {' '}
+            {localTemp}
+          </span>
+          <button
+            type="button"
+            className="border-2 bg-pinkardo-header rounded-lg w-full text-center py-2 my-4 font-bold"
+            onClick={() => handleLocalWeather()}
+          >
+            Get your local weather
+          </button>
+        </div>
+        <div className="flex w-full justify-between mb-2">
+          <span className="text-white"> Filter by weather condition</span>
           <select name="code" id="cityCode" onChange={(e) => handleChange(e)}>
             <option value="100">All</option>
             <option value="200">Thunderstorm</option>
@@ -48,25 +72,6 @@ const Home = () => {
             <option value="801">Cloudy</option>
           </select>
         </div>
-        <div className="flex flex-col">
-          <span>
-            Local Weather:
-            {' '}
-            {localWeather}
-          </span>
-          <span>
-            Local Temperature:
-            {' '}
-            {localTemp}
-          </span>
-        </div>
-        <button
-          type="button"
-          className="border-2 bg-purple-300 rounded-lg w-full text-center py-2 my-4 font-bold"
-          onClick={() => handleLocalWeather()}
-        >
-          Get your local weather
-        </button>
         <ul className="w-full flex flex-wrap">
           {Object.values(cityList).map((city) => {
             const nameToPath = city.name.replace(/, | /g, '-').toLowerCase();
