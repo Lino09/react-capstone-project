@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { filterWeather } from '../redux/home/home';
 import Location from './Location';
 import logo from '../assets/images/logo.svg';
+import logoLocation from '../assets/images/location.svg';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,8 @@ const Home = () => {
   };
   const [localWeather, setWeather] = useState('');
   const [localTemp, setTemp] = useState('');
+  const [localLocation, setLocalLocation] = useState('Microverse');
+  const [localCoords, setLocalCoords] = useState('');
   const handleLocalWeather = () => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -21,8 +24,10 @@ const Home = () => {
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=minutely,hourly,daily,alerts&units=metric&appid=77372caba8dce1328afad7d75df28bfb`)
           .then((response) => {
             const { weather } = response.data.current;
-            setWeather(` ${weather[0].main}`);
+            setWeather(`${weather[0].main}`);
             setTemp(`${response.data.current.temp}°C`);
+            setLocalLocation(`${response.data.timezone.toUpperCase()}`);
+            setLocalCoords(`lat: ${response.data.lat}, lon: ${response.data.lon}`);
           });
       });
     } else {
@@ -40,15 +45,25 @@ const Home = () => {
           Cities weather
           <img className="h-8 w-8 absolute top-1 right-4" src={logo} alt="logo" />
         </h1>
-        <div className="flex flex-col bg-pinkardo px-4 mb-4 py-4 text-white">
+        <div className="flex flex-col bg-pinkardo px-8 mb-4 py-4 text-white relative">
+          <span className="font-bold">
+            Zone:
+            &nbsp;
+            {localLocation}
+          </span>
+          <span>
+            Location:
+            &nbsp;
+            {localCoords}
+          </span>
           <span>
             Local Weather:
-            {' '}
+            &nbsp;
             {localWeather}
           </span>
           <span>
             Local Temperature:
-            {' '}
+            &nbsp;
             {localTemp}
           </span>
           <button
@@ -58,8 +73,9 @@ const Home = () => {
           >
             Get your local weather
           </button>
+          <img className="w-16 h-16 right-3 top-16 absolute" src={logoLocation} alt="location" />
         </div>
-        <div className="flex w-full justify-between mb-2">
+        <div className="flex w-full justify-between mb-2 px-4">
           <span className="text-white"> Filter by weather condition</span>
           <select name="code" id="cityCode" onChange={(e) => handleChange(e)}>
             <option value="100">All</option>
@@ -72,7 +88,7 @@ const Home = () => {
             <option value="801">Cloudy</option>
           </select>
         </div>
-        <ul className="w-full flex flex-wrap">
+        <ul className="w-full flex flex-wrap px-4">
           {Object.values(cityList).map((city) => {
             const nameToPath = city.name.replace(/, | /g, '-').toLowerCase();
             return (
