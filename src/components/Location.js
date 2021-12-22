@@ -18,7 +18,7 @@ const Location = ({ nameToPath, city }) => {
       to={`weather/${nameToPath}`}
     >
       <div
-        className="p-2 flex flex-col items-end space-y-2 bg-cover rounded text-white
+        className="p-2 flex flex-col items-end space-y-2 bg-cover rounded-lg text-white
         bg-pink-900 bg-blend-screen font-bold"
         style={{ backgroundImage: `url(${cityPicture})` }}
       >

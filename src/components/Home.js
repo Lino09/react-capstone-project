@@ -30,7 +30,7 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-pink-100 min-h-screen w-full flex flex-col items-center">
+    <div className=" min-h-screen w-full flex flex-col items-center">
       <div className="w-full max-w-lg px-4">
         <h1 className=" text-3xl my-8">
           Cities weather
@@ -69,9 +69,9 @@ const Home = () => {
         </button>
         <ul className="w-full flex flex-wrap">
           {Object.values(cityList).map((city) => {
-            const nameToPath = city.name.replace(/, | /g, '-');
+            const nameToPath = city.name.replace(/, | /g, '-').toLowerCase();
             return (
-              <li className="p-px w-1/2" key={city.name}>
+              <li className="py-1 px-px w-1/2" key={city.name}>
                 <Location nameToPath={nameToPath} city={city.name} />
               </li>
             );

@@ -11,10 +11,10 @@ const cities = {
   'Delhi, India': { name: 'Delhi, India', coords: { lat: '28.64', lon: '77.21' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
   'Istambul, Turkey': { name: 'Istambul, Turkey', coords: { lat: '41.01', lon: '28.97' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
   'Paris, France': { name: 'Paris, France', coords: { lat: '48.86', lon: '2.34' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
-  'Singapore, Singapore': { name: 'Singapore, Singapore', coords: { lat: '1.29', lon: '103.85' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
+  'Singapore': { name: 'Singapore', coords: { lat: '1.29', lon: '103.85' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
   'London, UK': { name: 'London, UK', coords: { lat: '51.50', lon: '-0.11' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
   'Bangkok, Thailand': { name: 'Bangkok, Thailand', coords: { lat: '13.73', lon: '100.52' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
-  'Hong Kong, Hong Kong': { name: 'Hong Kong, Hong Kong', coords: { lat: '22.30', lon: '114.17' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
+  'Hong Kong': { name: 'Hong Kong', coords: { lat: '22.30', lon: '114.17' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
 };
 let cacheState = {};
 
