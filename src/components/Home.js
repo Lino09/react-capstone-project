@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterWeather } from '../redux/home/home';
 import Location from './Location';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo.svg';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -37,8 +37,8 @@ const Home = () => {
       <div className="w-full max-w-lg">
         <h1 className="text-2xl mt-2 mb-4 text-center font-sans font-light text-white relative">
           <span className="text-base absolute left-4 top-2">{time}</span>
-          <img src="" alt="" />
           Cities weather
+          <img className="h-8 w-8 absolute top-1 right-4" src={logo} alt="logo" />
         </h1>
         <div className="flex flex-col bg-pinkardo px-4 mb-4 py-4 text-white">
           <span>
