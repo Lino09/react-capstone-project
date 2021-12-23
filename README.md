@@ -41,6 +41,10 @@ npm start
 - GitHub: [@Lino09](https://github.com/Lino09)
 - Twitter: [@AbelHerreraZam1](https://twitter.com/AbelHerreraZam1)
 
+## Acknowledgements
+
+Amazing design by: [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
