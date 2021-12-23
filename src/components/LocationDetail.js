@@ -78,7 +78,7 @@ const LocationDetail = ({ city }) => {
 };
 
 LocationDetail.propTypes = {
-  city: PropTypes.object //eslint-disable-line
+  city: PropTypes.objectOf(PropTypes.string, PropTypes.number, PropTypes.object),
 };
 LocationDetail.defaultProps = {
   city: { name: 'Lagos, Nigeria', coords: { lat: '6.46', lon: '3.40' }, current: { temp: 'fetching', weather: [{ icon: '01d', main: 'clear', id: 800 }] } },
