@@ -1,9 +1,8 @@
 # Weather App - Capstone Project
 "Weather App" is a website to check the weather of your location, it also includes weather from famous cities around the world, the page also includes a details page for each city.
 
-![Screenshot](src/assets/missions-join.png)
-![Screenshot](src/assets/my-profile.png)
-![Screenshot](src/assets/res-rockets.png)
+![Screenshot](./src/assets/images/ss-home.jpg)
+![Screenshot](./src/assets/images/ss-detail.jpg)
 
 
 ## Live Demo
