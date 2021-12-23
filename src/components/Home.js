@@ -19,8 +19,6 @@ const Home = () => {
   const handleLocalWeather = () => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
-        console.log('Latitude is :', position.coords.latitude);
-        console.log('Longitude is :', position.coords.longitude);
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=minutely,hourly,daily,alerts&units=metric&appid=77372caba8dce1328afad7d75df28bfb`)
           .then((response) => {
             const { weather } = response.data.current;
