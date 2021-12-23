@@ -5,9 +5,10 @@
 ![Screenshot](./src/assets/images/ss-detail.jpg)
 
 
-## Live Demo
+## Demo
 
 [Click Here](https://abels-weather-app.herokuapp.com/)
+[Video Demo](https://www.loom.com/share/fd21bbb5d616471b83dc3ea1a293ae7e)
 
 ## Built With
 
